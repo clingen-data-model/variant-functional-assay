@@ -1,0 +1,534 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix RO: <http://purl.obolibrary.org/obo/RO_> .
+@prefix SEPIO: <http://purl.obolibrary.org/obo/SEPIO_> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sepio-cg: <http://purl.obolibrary.org/obo/SEPIOCG_> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://clinicalgenome.org/linkml/variant-functional-assay> a owl:Ontology ;
+    rdfs:label "functional-assay" ;
+    IAO:0000700 sepio-cg:Disease,
+        sepio-cg:Document,
+        sepio-cg:FunctionalAssay,
+        sepio-cg:FunctionalAssayResult,
+        sepio-cg:Gene,
+        sepio-cg:GeneticCondition,
+        sepio-cg:PhenotypicFeature,
+        sepio-cg:Variant ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    dcterms:title "Representation of functional assays of genetic variant effect" ;
+    pav:version "0.0.1" ;
+    linkml:generation_date "2022-04-19T22:03:49" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "variant_functional_assay.yaml" ;
+    linkml:source_file_date "2022-04-19T21:55:16" ;
+    linkml:source_file_size 10057 .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+RO:0002200 a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+sepio-cg:98901 a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+sepio-cg:Document a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Document" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:pmid ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:pmc_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:comment ] ;
+    skos:exactMatch IAO:0000310 .
+
+sepio-cg:FunctionalAssayResult a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "FunctionalAssayResult" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:result_assertion ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty sepio-cg:standard_deviation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:range ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty sepio-cg:standard_error_of_mean ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:result ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty sepio-cg:p_value ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:Variant ;
+            owl:onProperty sepio-cg:variant ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty sepio-cg:replicate_count ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:Unit ;
+            owl:onProperty sepio-cg:units ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:intraquartile_range ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty sepio-cg:is_approximation_by_curator ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:FunctionalAssay ;
+            owl:onProperty sepio-cg:assay ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:ValidationControlType ;
+            owl:onProperty sepio-cg:validation_control ] .
+
+sepio-cg:GeneticCondition a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "genetic condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sepio-cg:PhenotypicFeature ;
+            owl:onProperty RO:0002200 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty RO:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:Gene ;
+            owl:onProperty SEPIO:0000278 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:comment ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty dcterms:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sepio-cg:Disease ;
+            owl:onProperty sepio-cg:98901 ] ;
+    skos:exactMatch SEPIO:0000219 .
+
+sepio-cg:abnormal_range a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "abnormal range" ;
+    rdfs:range linkml:String .
+
+sepio-cg:additional_document a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "additional document" ;
+    rdfs:range linkml:String .
+
+sepio-cg:assay a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assay" ;
+    rdfs:range sepio-cg:FunctionalAssay .
+
+sepio-cg:canonical_allele_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "canonical_allele_id" ;
+    rdfs:range linkml:String .
+
+sepio-cg:clinvar_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "clinvar id" ;
+    rdfs:range linkml:String .
+
+sepio-cg:document a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "document" ;
+    rdfs:range linkml:String .
+
+sepio-cg:general_class a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "general class" ;
+    rdfs:range linkml:String .
+
+sepio-cg:has_gene a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "has gene" ;
+    rdfs:range sepio-cg:Gene .
+
+sepio-cg:hgvs_c a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hgvs c" ;
+    rdfs:range linkml:String .
+
+sepio-cg:hgvs_p a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hgvs p" ;
+    rdfs:range linkml:String .
+
+sepio-cg:indeterminate_range a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "indeterminate range" ;
+    rdfs:range linkml:String .
+
+sepio-cg:intraquartile_range a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "intraquartile range" ;
+    rdfs:range linkml:String .
+
+sepio-cg:is_approximation_by_curator a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "is approximation by curator" ;
+    rdfs:range linkml:Boolean .
+
+sepio-cg:legacy_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "legacy name" ;
+    rdfs:range linkml:String .
+
+sepio-cg:material_used a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "material used" ;
+    rdfs:range linkml:String .
+
+sepio-cg:normal_range a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "normal range" ;
+    rdfs:range linkml:String .
+
+sepio-cg:p_value a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "p value" ;
+    rdfs:range linkml:Decimal .
+
+sepio-cg:patient_derived_material_used a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "patient derived material used" ;
+    rdfs:range linkml:String .
+
+sepio-cg:pmc_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pmc_id" ;
+    rdfs:range linkml:String .
+
+sepio-cg:pmid a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pmid" ;
+    rdfs:range linkml:String .
+
+sepio-cg:range_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "range type" ;
+    rdfs:range sepio-cg:RangeType .
+
+sepio-cg:read_out_description a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "read out description" ;
+    rdfs:range linkml:String .
+
+sepio-cg:replicate_count a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "replicate count" ;
+    rdfs:range linkml:Integer .
+
+sepio-cg:replication a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "replication" ;
+    rdfs:range linkml:String .
+
+sepio-cg:result a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "result" ;
+    rdfs:range linkml:String .
+
+sepio-cg:result_assertion a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "result assertion" ;
+    rdfs:range linkml:String .
+
+sepio-cg:significance_threshold a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "significance threshold" ;
+    rdfs:range linkml:String .
+
+sepio-cg:standard_deviation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "standard deviation" ;
+    rdfs:range linkml:Decimal .
+
+sepio-cg:standard_error_of_mean a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "standard error of mean" ;
+    rdfs:range linkml:Decimal .
+
+sepio-cg:statistical_analysis_description a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "statistical analysis description" ;
+    rdfs:range linkml:String .
+
+sepio-cg:symbol a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "symbol" ;
+    rdfs:range linkml:String .
+
+sepio-cg:synonym a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "synonym" ;
+    rdfs:range linkml:String .
+
+sepio-cg:validation_control a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "validation control" ;
+    rdfs:range sepio-cg:ValidationControlType .
+
+sepio-cg:validation_control_benign a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "validation control benign" ;
+    rdfs:range linkml:String .
+
+sepio-cg:validation_control_pathogenic a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "validation control pathogenic" ;
+    rdfs:range linkml:String .
+
+sepio-cg:variant a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "variant" ;
+    rdfs:range sepio-cg:Variant .
+
+sepio-cg:xref a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "xref" ;
+    rdfs:range linkml:String .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+RO:0000091 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "inheritance_pattern" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch RO:0000091 .
+
+sepio-cg:Disease a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "disease" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/DOID_4>,
+        <http://purl.obolibrary.org/obo/MONDO_0000001> .
+
+sepio-cg:PhenotypicFeature a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "phenotypic feature" .
+
+<http://purl.obolibrary.org/obo/SEPIOCG_RangeType#qualitative> a sepio-cg:RangeType,
+        owl:Class ;
+    rdfs:label "qualitative" .
+
+<http://purl.obolibrary.org/obo/SEPIOCG_RangeType#quantitative> a sepio-cg:RangeType,
+        owl:Class ;
+    rdfs:label "quantitative" .
+
+sepio-cg:Unit a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "unit" ;
+    rdfs:subClassOf linkml:String .
+
+<http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#benign> a sepio-cg:ValidationControlType,
+        owl:Class ;
+    rdfs:label "benign" .
+
+<http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#pathogenic> a sepio-cg:ValidationControlType,
+        owl:Class ;
+    rdfs:label "pathogenic" .
+
+<http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#wild-type> a sepio-cg:ValidationControlType,
+        owl:Class ;
+    rdfs:label "wild-type" .
+
+sepio-cg:range a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+sepio-cg:units a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+dcterms:description a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+rdfs:label a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "label" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch rdfs:label .
+
+sepio-cg:FunctionalAssay a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "FunctionalAssay" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:range ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:validation_control_benign ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:replication ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:material_used ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:Unit ;
+            owl:onProperty sepio-cg:units ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:statistical_analysis_description ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:abnormal_range ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:additional_document ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty dcterms:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:comment ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:significance_threshold ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:validation_control_pathogenic ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:general_class ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:normal_range ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:read_out_description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:indeterminate_range ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:patient_derived_material_used ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:document ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:RangeType ;
+            owl:onProperty sepio-cg:range_type ] .
+
+sepio-cg:Variant a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Variant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass sepio-cg:Gene ;
+            owl:onProperty sepio-cg:has_gene ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:hgvs_p ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:hgvs_c ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty sepio-cg:legacy_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:clinvar_id ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:canonical_allele_id ;
+            owl:qualifiedCardinality 1 ] .
+
+sepio-cg:comment a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+sepio-cg:Gene a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "gene" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:symbol ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:synonym ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sepio-cg:xref ] ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+sepio-cg:RangeType a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "RangeType" ;
+    owl:unionOf ( <http://purl.obolibrary.org/obo/SEPIOCG_RangeType#qualitative> <http://purl.obolibrary.org/obo/SEPIOCG_RangeType#quantitative> ) ;
+    linkml:permissible_values <http://purl.obolibrary.org/obo/SEPIOCG_RangeType#qualitative>,
+        <http://purl.obolibrary.org/obo/SEPIOCG_RangeType#quantitative> .
+
+sepio-cg:ValidationControlType a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "ValidationControlType" ;
+    owl:unionOf ( <http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#pathogenic> <http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#benign> <http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#wild-type> ) ;
+    linkml:permissible_values <http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#benign>,
+        <http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#pathogenic>,
+        <http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType#wild-type> .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+

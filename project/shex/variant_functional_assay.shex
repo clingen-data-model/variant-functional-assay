@@ -1,0 +1,141 @@
+BASE <http://purl.obolibrary.org/obo/SEPIOCG_>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX SEPIO: <http://purl.obolibrary.org/obo/SEPIO_>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX SO: <http://purl.obolibrary.org/obo/SO_>
+PREFIX UO: <http://purl.obolibrary.org/obo/UO_>
+
+
+<Unit> UO:0000000
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+<Disease> CLOSED {
+    (  $<Disease_tes> rdf:type . * ;
+       rdf:type [ <Disease> ] ?
+    )
+}
+
+<Document> CLOSED {
+    (  $<Document_tes> (  <pmc_id> @linkml:String ? ;
+          <comment> @linkml:String *
+       ) ;
+       rdf:type [ IAO:0000310 ]
+    )
+}
+
+<FunctionalAssay> CLOSED {
+    (  $<FunctionalAssay_tes> (  <general_class> @linkml:String * ;
+          <material_used> @linkml:String * ;
+          <patient_derived_material_used> @linkml:String * ;
+          dcterms:description @linkml:String ? ;
+          <document> @linkml:String ? ;
+          <additional_document> @linkml:String * ;
+          <read_out_description> @linkml:String ? ;
+          <range> @linkml:String ? ;
+          <normal_range> @linkml:String ? ;
+          <abnormal_range> @linkml:String ? ;
+          <indeterminate_range> @linkml:String ? ;
+          <validation_control_pathogenic> @linkml:String ? ;
+          <validation_control_benign> @linkml:String ? ;
+          <replication> @linkml:String ;
+          <statistical_analysis_description> @linkml:String ;
+          <significance_threshold> @linkml:String ? ;
+          <comment> @linkml:String * ;
+          <range_type> @<RangeType> ? ;
+          <units> @<Unit> ?
+       ) ;
+       rdf:type [ <FunctionalAssay> ] ?
+    )
+}
+
+<FunctionalAssayResult> CLOSED {
+    (  $<FunctionalAssayResult_tes> (  <result> @linkml:String ;
+          <result_assertion> @linkml:String ? ;
+          <assay> @<FunctionalAssay> ? ;
+          <variant> @<Variant> ? ;
+          <units> @<Unit> ? ;
+          <validation_control> @<ValidationControlType> ? ;
+          <replicate_count> @linkml:Integer ? ;
+          <standard_deviation> @linkml:Decimal ? ;
+          <standard_error_of_mean> @linkml:Decimal ? ;
+          <range> @linkml:String ? ;
+          <intraquartile_range> @linkml:String ? ;
+          <p_value> @linkml:Decimal ? ;
+          <is_approximation_by_curator> @linkml:Boolean ?
+       ) ;
+       rdf:type [ <FunctionalAssayResult> ] ?
+    )
+}
+
+<Gene> CLOSED {
+    (  $<Gene_tes> (  <symbol> @linkml:String ? ;
+          <synonym> @linkml:String ? ;
+          <xref> @linkml:String ?
+       ) ;
+       rdf:type [ SO:0000704 ] ?
+    )
+}
+
+<GeneticCondition> CLOSED {
+    (  $<GeneticCondition_tes> (  <98901> @<Disease> * ;
+          RO:0002200 @<PhenotypicFeature> * ;
+          SEPIO:0000278 @<Gene> ? ;
+          RO:0000091 @linkml:String ? ;
+          rdfs:label @linkml:String ? ;
+          dcterms:description @linkml:String ? ;
+          <comment> @linkml:String *
+       ) ;
+       rdf:type [ SEPIO:0000219 ] ?
+    )
+}
+
+<PhenotypicFeature> CLOSED {
+    (  $<PhenotypicFeature_tes> rdf:type . * ;
+       rdf:type [ <PhenotypicFeature> ] ?
+    )
+}
+
+<Variant> CLOSED {
+    (  $<Variant_tes> (  <has_gene> @<Gene> ? ;
+          <hgvs_c> @linkml:String ? ;
+          <hgvs_p> @linkml:String ? ;
+          <clinvar_id> @linkml:String ? ;
+          <legacy_name> @linkml:String *
+       ) ;
+       rdf:type [ <Variant> ]
+    )
+}
+
+

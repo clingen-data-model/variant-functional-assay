@@ -1,0 +1,333 @@
+{
+   "$defs": {
+      "Disease": {
+         "additionalProperties": false,
+         "description": "A recognizable grouping of pathological observed phenotypes occuring from a common cause",
+         "properties": {},
+         "required": [],
+         "title": "Disease",
+         "type": "object"
+      },
+      "Document": {
+         "additionalProperties": false,
+         "description": "A collection of information content entities intended to be understood together as a whole",
+         "properties": {
+            "comment": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "pmc_id": {
+               "description": "Identifier of a manuscript in PubMedCentral database",
+               "type": "string"
+            },
+            "pmid": {
+               "description": "Identifier of a manuscript in PubMed database",
+               "type": "string"
+            }
+         },
+         "required": [
+            "pmid"
+         ],
+         "title": "Document",
+         "type": "object"
+      },
+      "FunctionalAssay": {
+         "additionalProperties": false,
+         "description": "Experimental evaluation of the functional effect of one or more genetic variants.",
+         "properties": {
+            "abnormal_range": {
+               "description": "The subset of possible output values which the authors of an assay classify as indicative of abnormal function.",
+               "type": "string"
+            },
+            "additional_document": {
+               "description": "External document referenced in this document as providing details about the assay",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "comment": {
+               "description": "Any additional information that a curator would like to provide about the FunctionalAssay that is not adequately captured by other fields",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "Free-text description/summary of the assay",
+               "type": "string"
+            },
+            "document": {
+               "description": "The primary document or manuscript in which the assay and its results are described. Supplementary descriptions can be recorded in \"additional publication\"",
+               "type": "string"
+            },
+            "general_class": {
+               "description": "The type or class of assay as identified using structured language or ontology terms. BAO or ECO terms are preferred when available.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "indeterminate_range": {
+               "description": "The subset of possible output values which the authors of an assay classify as indeterminante with respect to function.",
+               "type": "string"
+            },
+            "material_used": {
+               "description": "Reagents (biological or non-biological) that were use as comparators or other inputs to an assay. CLO, CO and BAI terms are preferred when available.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "normal_range": {
+               "description": "The subset of possible output values which the authors of an assay classify as indicative of normal function.",
+               "type": "string"
+            },
+            "patient_derived_material_used": {
+               "description": "Material used as inputs or comparators within an assay that were derived/sourced from a patient. These are differentiated from other materials used in an assay because of the possibility that use of such materials may involved confounding variables (e.g.,  other genetic variants) that may be difficult to account for in validation. CLO, CO and BAI terms are preferred when available.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "range": {
+               "description": "Range of all possible output values of the assay. If qualitative this will comprise a list of terms indicating the observable results. If quantitative, this will indicate the units used.",
+               "type": "string"
+            },
+            "range_type": {
+               "$ref": "#/$defs/RangeType",
+               "description": "The type of values that can be expected from results of this assay (quantitative or qualitative). This could be inferred from the assay's range, but is encoded here to simplify searches."
+            },
+            "read_out_description": {
+               "description": "Free-text description of the type of readout of the assay",
+               "type": "string"
+            },
+            "replication": {
+               "description": "Description of the process for replication of an assay as provided by the document, or \"not reported\" if not specified.",
+               "type": "string"
+            },
+            "significance_threshold": {
+               "description": "The threshold for significance of measurements under this assay, as defined by the authors of the document (if provided).",
+               "type": "string"
+            },
+            "statistical_analysis_description": {
+               "description": "Description of the statistical analysis performed for validation and determination of thresholds of the assay, or \"not reported\" if the document does not specify.",
+               "type": "string"
+            },
+            "units": {
+               "description": "For quantitative assays, the default unit to be applied to individual results if not overridden.",
+               "type": "string"
+            },
+            "validation_control_benign": {
+               "type": "string"
+            },
+            "validation_control_pathogenic": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "replication",
+            "statistical_analysis_description"
+         ],
+         "title": "FunctionalAssay",
+         "type": "object"
+      },
+      "FunctionalAssayResult": {
+         "additionalProperties": false,
+         "description": "The result of assessing a genetic variant's effect under a single instance of a functional assay.",
+         "properties": {
+            "assay": {
+               "$ref": "#/$defs/FunctionalAssay"
+            },
+            "intraquartile_range": {
+               "pattern": "^[<>]?[-\\d]+(.\\d+)? - [<>]?[-\\d]+(.\\d+)?",
+               "type": "string"
+            },
+            "is_approximation_by_curator": {
+               "description": "A flag to indicate that the curator had to use some method of approximation of the `result` (e.g., by reading the value from a graph when numerical values were not provided by the authors reporting the `assay`).",
+               "type": "boolean"
+            },
+            "p_value": {
+               "maximum": 1,
+               "minimum": 0,
+               "type": "number"
+            },
+            "range": {
+               "pattern": "^[<>]?[-\\d]+(.\\d+)? - [<>]?[-\\d]+(.\\d+)?",
+               "type": "string"
+            },
+            "replicate_count": {
+               "description": "The number of times the `variant` was evaluated using the `assay` to produce the reported `result`.",
+               "minimum": 0,
+               "type": "integer"
+            },
+            "result": {
+               "description": "The measured value of this variant's effect on function. The value must be consistent with the `range` of the referenced `assay`.",
+               "type": "string"
+            },
+            "result_assertion": {
+               "description": "An assertion as to the categorized impact of the variant's effect, as described by the authors reporting the `assay` (if provided).",
+               "type": "string"
+            },
+            "standard_deviation": {
+               "minimum": 0,
+               "type": "number"
+            },
+            "standard_error_of_mean": {
+               "minimum": 0,
+               "type": "number"
+            },
+            "units": {
+               "description": "For qualtitatve assays, the units of the `result`. This may be omitted if the referenced `assay` provides a default value for the units of its measurements. Values must be from the Units of Measurement Ontology (UO)",
+               "type": "string"
+            },
+            "validation_control": {
+               "$ref": "#/$defs/ValidationControlType",
+               "description": "Optional field used to indicate if this result is for a variant that was used as a validation control for the `assay` either as a `benign` or `pathogenic` variant."
+            },
+            "variant": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "result"
+         ],
+         "title": "FunctionalAssayResult",
+         "type": "object"
+      },
+      "Gene": {
+         "additionalProperties": false,
+         "description": "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.",
+         "properties": {
+            "symbol": {
+               "type": "string"
+            },
+            "synonym": {
+               "type": "string"
+            },
+            "xref": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Gene",
+         "type": "object"
+      },
+      "GeneticCondition": {
+         "additionalProperties": false,
+         "description": "A disease, or a set of one or more co-occurring phenotypes, typically controlled by a single locus with a defined inheritance pattern.",
+         "properties": {
+            "associated_disease": {
+               "description": "A recognizible grouping of pathological observed phenotypes occuring from a common cause",
+               "items": {
+                  "$ref": "#/$defs/Disease"
+               },
+               "type": "array"
+            },
+            "comment": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.\n",
+               "type": "string"
+            },
+            "has_gene": {
+               "$ref": "#/$defs/Gene",
+               "description": "The gene associated with a genetic condition"
+            },
+            "has_phenotype": {
+               "description": "An expressed characteristic of an organism",
+               "items": {
+                  "$ref": "#/$defs/PhenotypicFeature"
+               },
+               "type": "array"
+            },
+            "inheritance_pattern": {
+               "description": "The manner in which a genetic condition is inherited",
+               "type": "string"
+            },
+            "label": {
+               "description": "A name given to the resource",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "GeneticCondition",
+         "type": "object"
+      },
+      "PhenotypicFeature": {
+         "additionalProperties": false,
+         "description": "An expressed characteristic of an organism",
+         "properties": {},
+         "required": [],
+         "title": "PhenotypicFeature",
+         "type": "object"
+      },
+      "RangeType": {
+         "description": "",
+         "enum": [
+            "qualitative",
+            "quantitative"
+         ],
+         "title": "RangeType",
+         "type": "string"
+      },
+      "ValidationControlType": {
+         "description": "",
+         "enum": [
+            "pathogenic",
+            "benign",
+            "wild-type"
+         ],
+         "title": "ValidationControlType",
+         "type": "string"
+      },
+      "Variant": {
+         "additionalProperties": false,
+         "description": "A genetic variant, preferably identified by a canonical allele id",
+         "properties": {
+            "canonical_allele_id": {
+               "type": "string"
+            },
+            "clinvar_id": {
+               "type": "string"
+            },
+            "has_gene": {
+               "$ref": "#/$defs/Gene",
+               "description": "Connects an entity associated with one or more genes"
+            },
+            "hgvs_c": {
+               "type": "string"
+            },
+            "hgvs_p": {
+               "type": "string"
+            },
+            "legacy_name": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "canonical_allele_id"
+         ],
+         "title": "Variant",
+         "type": "object"
+      }
+   },
+   "$id": "https://clinicalgenome.org/linkml/variant-functional-assay",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "functional-assay",
+   "type": "object",
+   "version": "0.0.1"
+}

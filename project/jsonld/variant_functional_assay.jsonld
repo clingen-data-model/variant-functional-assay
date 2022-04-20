@@ -1,0 +1,1439 @@
+{
+  "name": "functional-assay",
+  "title": "Representation of functional assays of genetic variant effect",
+  "id": "https://clinicalgenome.org/linkml/variant-functional-assay",
+  "version": "0.0.1",
+  "imports": [
+    "linkml:types"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "biolink",
+      "prefix_reference": "https://w3id.org/biolink/biolink-model"
+    },
+    {
+      "prefix_prefix": "RO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/RO_"
+    },
+    {
+      "prefix_prefix": "SEPIO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/SEPIO_"
+    },
+    {
+      "prefix_prefix": "sepio-cg",
+      "prefix_reference": "http://purl.obolibrary.org/obo/SEPIOCG_"
+    },
+    {
+      "prefix_prefix": "sdo",
+      "prefix_reference": "https://schema.org/"
+    },
+    {
+      "prefix_prefix": "CAID",
+      "prefix_reference": "http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid="
+    }
+  ],
+  "default_curi_maps": [
+    "semweb_context",
+    "monarch_context",
+    "obo_context"
+  ],
+  "default_prefix": "sepio-cg",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "unit",
+      "id_prefixes": [
+        "UO"
+      ],
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_Unit",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://purl.obolibrary.org/obo/UO_0000000",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "description": "a complete URI",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "comments": [
+        "Used for inheritence and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "RangeType",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_RangeType",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "permissible_values": [
+        {
+          "text": "qualitative"
+        },
+        {
+          "text": "quantitative"
+        }
+      ]
+    },
+    {
+      "name": "ValidationControlType",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_ValidationControlType",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "permissible_values": [
+        {
+          "text": "pathogenic"
+        },
+        {
+          "text": "benign"
+        },
+        {
+          "text": "wild-type"
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "name": "associated_disease",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_associated_disease",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIOCG_98901"
+      ],
+      "description": "A recognizible grouping of pathological observed phenotypes occuring from a common cause",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_98901",
+      "inlined": true,
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "range": "Disease",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_phenotype",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_has_phenotype",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002200"
+      ],
+      "description": "An expressed characteristic of an organism",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0002200",
+      "inlined": true,
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "range": "PhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_gene",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_has_gene",
+      "description": "Connects an entity associated with one or more genes",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_has_gene",
+      "inlined": true,
+      "owner": "Variant",
+      "domain_of": [
+        "GeneticCondition",
+        "Variant"
+      ],
+      "range": "Gene",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene__symbol",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_symbol",
+      "alias": "symbol",
+      "owner": "Gene",
+      "domain_of": [
+        "Gene"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene__synonym",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_synonym",
+      "alias": "synonym",
+      "owner": "Gene",
+      "domain_of": [
+        "Gene"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene__xref",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_xref",
+      "alias": "xref",
+      "owner": "Gene",
+      "domain_of": [
+        "Gene"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "geneticCondition__inheritance_pattern",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000091"
+      ],
+      "description": "The manner in which a genetic condition is inherited",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000091",
+      "alias": "inheritance_pattern",
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "geneticCondition__label",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "description": "A name given to the resource",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#label",
+      "alias": "label",
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "geneticCondition__description",
+      "mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "description": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.\n",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.org/dc/terms/description",
+      "alias": "description",
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "geneticCondition__comment",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_comment",
+      "multivalued": true,
+      "alias": "comment",
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "document__pmid",
+      "description": "Identifier of a manuscript in PubMed database",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_pmid",
+      "identifier": true,
+      "alias": "pmid",
+      "owner": "Document",
+      "domain_of": [
+        "Document"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "document__pmc_id",
+      "description": "Identifier of a manuscript in PubMedCentral database",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_pmc_id",
+      "alias": "pmc_id",
+      "owner": "Document",
+      "domain_of": [
+        "Document"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "document__comment",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_comment",
+      "multivalued": true,
+      "alias": "comment",
+      "owner": "Document",
+      "domain_of": [
+        "Document"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant__canonical_allele_id",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_canonical_allele_id",
+      "identifier": true,
+      "alias": "canonical_allele_id",
+      "owner": "Variant",
+      "domain_of": [
+        "Variant"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant__hgvs_c",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_hgvs_c",
+      "alias": "hgvs_c",
+      "owner": "Variant",
+      "domain_of": [
+        "Variant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant__hgvs_p",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_hgvs_p",
+      "alias": "hgvs_p",
+      "owner": "Variant",
+      "domain_of": [
+        "Variant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant__clinvar_id",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_clinvar_id",
+      "alias": "clinvar_id",
+      "owner": "Variant",
+      "domain_of": [
+        "Variant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant__legacy_name",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_legacy_name",
+      "multivalued": true,
+      "alias": "legacy_name",
+      "owner": "Variant",
+      "domain_of": [
+        "Variant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__general_class",
+      "description": "The type or class of assay as identified using structured language or ontology terms. BAO or ECO terms are preferred when available.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_general_class",
+      "multivalued": true,
+      "alias": "general_class",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__material_used",
+      "description": "Reagents (biological or non-biological) that were use as comparators or other inputs to an assay. CLO, CO and BAI terms are preferred when available.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_material_used",
+      "multivalued": true,
+      "alias": "material_used",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__patient_derived_material_used",
+      "description": "Material used as inputs or comparators within an assay that were derived/sourced from a patient. These are differentiated from other materials used in an assay because of the possibility that use of such materials may involved confounding variables (e.g.,  other genetic variants) that may be difficult to account for in validation. CLO, CO and BAI terms are preferred when available.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_patient_derived_material_used",
+      "multivalued": true,
+      "alias": "patient_derived_material_used",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__description",
+      "mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "description": "Free-text description/summary of the assay",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.org/dc/terms/description",
+      "alias": "description",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__document",
+      "description": "The primary document or manuscript in which the assay and its results are described. Supplementary descriptions can be recorded in \"additional publication\"",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_document",
+      "alias": "document",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__additional_document",
+      "description": "External document referenced in this document as providing details about the assay",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_additional_document",
+      "multivalued": true,
+      "alias": "additional_document",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__read_out_description",
+      "description": "Free-text description of the type of readout of the assay",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_read_out_description",
+      "alias": "read_out_description",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__range",
+      "description": "Range of all possible output values of the assay. If qualitative this will comprise a list of terms indicating the observable results. If quantitative, this will indicate the units used.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_range",
+      "alias": "range",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__normal_range",
+      "description": "The subset of possible output values which the authors of an assay classify as indicative of normal function.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_normal_range",
+      "alias": "normal_range",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__abnormal_range",
+      "description": "The subset of possible output values which the authors of an assay classify as indicative of abnormal function.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_abnormal_range",
+      "alias": "abnormal_range",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__indeterminate_range",
+      "description": "The subset of possible output values which the authors of an assay classify as indeterminante with respect to function.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_indeterminate_range",
+      "alias": "indeterminate_range",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__validation_control_pathogenic",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_validation_control_pathogenic",
+      "alias": "validation_control_pathogenic",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__validation_control_benign",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_validation_control_benign",
+      "alias": "validation_control_benign",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__replication",
+      "description": "Description of the process for replication of an assay as provided by the document, or \"not reported\" if not specified.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_replication",
+      "alias": "replication",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__statistical_analysis_description",
+      "description": "Description of the statistical analysis performed for validation and determination of thresholds of the assay, or \"not reported\" if the document does not specify.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_statistical_analysis_description",
+      "alias": "statistical_analysis_description",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__significance_threshold",
+      "description": "The threshold for significance of measurements under this assay, as defined by the authors of the document (if provided).",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_significance_threshold",
+      "alias": "significance_threshold",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__comment",
+      "description": "Any additional information that a curator would like to provide about the FunctionalAssay that is not adequately captured by other fields",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_comment",
+      "multivalued": true,
+      "alias": "comment",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__range_type",
+      "description": "The type of values that can be expected from results of this assay (quantitative or qualitative). This could be inferred from the assay's range, but is encoded here to simplify searches.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_range_type",
+      "alias": "range_type",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "RangeType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssay__units",
+      "description": "For quantitative assays, the default unit to be applied to individual results if not overridden.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_units",
+      "alias": "units",
+      "owner": "FunctionalAssay",
+      "domain_of": [
+        "FunctionalAssay"
+      ],
+      "range": "unit",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__result",
+      "description": "The measured value of this variant's effect on function. The value must be consistent with the `range` of the referenced `assay`.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_result",
+      "alias": "result",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__result_assertion",
+      "description": "An assertion as to the categorized impact of the variant's effect, as described by the authors reporting the `assay` (if provided).",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_result_assertion",
+      "alias": "result_assertion",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__assay",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_assay",
+      "inlined": true,
+      "alias": "assay",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "FunctionalAssay",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__variant",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_variant",
+      "alias": "variant",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "Variant",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__units",
+      "description": "For qualtitatve assays, the units of the `result`. This may be omitted if the referenced `assay` provides a default value for the units of its measurements. Values must be from the Units of Measurement Ontology (UO)",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_units",
+      "alias": "units",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "unit",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__validation_control",
+      "description": "Optional field used to indicate if this result is for a variant that was used as a validation control for the `assay` either as a `benign` or `pathogenic` variant.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_validation_control",
+      "alias": "validation_control",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "ValidationControlType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__replicate_count",
+      "description": "The number of times the `variant` was evaluated using the `assay` to produce the reported `result`.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_replicate_count",
+      "alias": "replicate_count",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "integer",
+      "minimum_value": 0,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__standard_deviation",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_standard_deviation",
+      "alias": "standard_deviation",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "decimal",
+      "minimum_value": 0,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__standard_error_of_mean",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_standard_error_of_mean",
+      "alias": "standard_error_of_mean",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "decimal",
+      "minimum_value": 0,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__range",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_range",
+      "alias": "range",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "string",
+      "pattern": "^[<>]?[-\\d]+(.\\d+)? - [<>]?[-\\d]+(.\\d+)?",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__intraquartile_range",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_intraquartile_range",
+      "alias": "intraquartile_range",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "string",
+      "pattern": "^[<>]?[-\\d]+(.\\d+)? - [<>]?[-\\d]+(.\\d+)?",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__p_value",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_p_value",
+      "alias": "p_value",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "decimal",
+      "minimum_value": 0,
+      "maximum_value": 1,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "functionalAssayResult__is_approximation_by_curator",
+      "description": "A flag to indicate that the curator had to use some method of approximation of the `result` (e.g., by reading the value from a graph when numerical values were not provided by the authors reporting the `assay`).",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_is_approximation_by_curator",
+      "alias": "is_approximation_by_curator",
+      "owner": "FunctionalAssayResult",
+      "domain_of": [
+        "FunctionalAssayResult"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "genetic_condition_associated_disease",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_associated_disease",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIOCG_98901"
+      ],
+      "description": "A recognizible grouping of pathological observed phenotypes occuring from a common cause",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "is_a": "associated_disease",
+      "domain": "GeneticCondition",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIOCG_98901",
+      "multivalued": true,
+      "inlined": true,
+      "alias": "associated disease",
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "associated disease",
+      "range": "Disease",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "genetic_condition_has_phenotype",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_has_phenotype",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002200"
+      ],
+      "description": "An expressed characteristic of an organism",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "is_a": "has_phenotype",
+      "domain": "GeneticCondition",
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0002200",
+      "multivalued": true,
+      "inlined": true,
+      "alias": "has phenotype",
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has phenotype",
+      "range": "PhenotypicFeature",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "genetic_condition_has_gene",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_has_gene",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000278"
+      ],
+      "description": "The gene associated with a genetic condition",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "is_a": "has_gene",
+      "domain": "GeneticCondition",
+      "slot_uri": "http://purl.obolibrary.org/obo/SEPIO_0000278",
+      "inlined": true,
+      "alias": "has gene",
+      "owner": "GeneticCondition",
+      "domain_of": [
+        "GeneticCondition"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has gene",
+      "range": "Gene",
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "Disease",
+      "id_prefixes": [
+        "MONDO",
+        "DOID",
+        "OMIM",
+        "Orphanet"
+      ],
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_Disease",
+      "exact_mappings": [
+        "MONDO:0000001",
+        "DOID:4"
+      ],
+      "description": "A recognizable grouping of pathological observed phenotypes occuring from a common cause",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIOCG_Disease",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PhenotypicFeature",
+      "id_prefixes": [
+        "HP",
+        "OMIM"
+      ],
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_PhenotypicFeature",
+      "description": "An expressed characteristic of an organism",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIOCG_PhenotypicFeature",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Gene",
+      "id_prefixes": [
+        "HGNC",
+        "NCBIGene"
+      ],
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_Gene",
+      "mappings": [
+        "SO:0000704"
+      ],
+      "description": "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slots": [
+        "gene__symbol",
+        "gene__synonym",
+        "gene__xref"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "symbol",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "synonym",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "xref",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://purl.obolibrary.org/obo/SO_0000704",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GeneticCondition",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_GeneticCondition",
+      "mappings": [
+        "SEPIO:0000219"
+      ],
+      "description": "A disease, or a set of one or more co-occurring phenotypes, typically controlled by a single locus with a defined inheritance pattern.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slots": [
+        "genetic_condition_associated_disease",
+        "genetic_condition_has_phenotype",
+        "genetic_condition_has_gene",
+        "geneticCondition__inheritance_pattern",
+        "geneticCondition__label",
+        "geneticCondition__description",
+        "geneticCondition__comment"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "inheritance_pattern",
+          "description": "The manner in which a genetic condition is inherited",
+          "slot_uri": "RO:0000091",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "label",
+          "description": "A name given to the resource",
+          "slot_uri": "rdfs:label",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "description",
+          "description": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.\n",
+          "slot_uri": "dc:description",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "comment",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIO_0000219",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Document",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_Document",
+      "mappings": [
+        "IAO:0000310"
+      ],
+      "description": "A collection of information content entities intended to be understood together as a whole",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slots": [
+        "document__pmid",
+        "document__pmc_id",
+        "document__comment"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "pmid",
+          "description": "Identifier of a manuscript in PubMed database",
+          "identifier": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "pmc_id",
+          "description": "Identifier of a manuscript in PubMedCentral database",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "comment",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000310",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Variant",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_Variant",
+      "description": "A genetic variant, preferably identified by a canonical allele id",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slots": [
+        "has_gene",
+        "variant__canonical_allele_id",
+        "variant__hgvs_c",
+        "variant__hgvs_p",
+        "variant__clinvar_id",
+        "variant__legacy_name"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "canonical_allele_id",
+          "identifier": true,
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "hgvs_c",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "hgvs_p",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "clinvar_id",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "legacy_name",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIOCG_Variant",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FunctionalAssay",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_FunctionalAssay",
+      "description": "Experimental evaluation of the functional effect of one or more genetic variants.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slots": [
+        "functionalAssay__general_class",
+        "functionalAssay__material_used",
+        "functionalAssay__patient_derived_material_used",
+        "functionalAssay__description",
+        "functionalAssay__document",
+        "functionalAssay__additional_document",
+        "functionalAssay__read_out_description",
+        "functionalAssay__range",
+        "functionalAssay__normal_range",
+        "functionalAssay__abnormal_range",
+        "functionalAssay__indeterminate_range",
+        "functionalAssay__validation_control_pathogenic",
+        "functionalAssay__validation_control_benign",
+        "functionalAssay__replication",
+        "functionalAssay__statistical_analysis_description",
+        "functionalAssay__significance_threshold",
+        "functionalAssay__comment",
+        "functionalAssay__range_type",
+        "functionalAssay__units"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "general_class",
+          "description": "The type or class of assay as identified using structured language or ontology terms. BAO or ECO terms are preferred when available.",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "material_used",
+          "description": "Reagents (biological or non-biological) that were use as comparators or other inputs to an assay. CLO, CO and BAI terms are preferred when available.",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "patient_derived_material_used",
+          "description": "Material used as inputs or comparators within an assay that were derived/sourced from a patient. These are differentiated from other materials used in an assay because of the possibility that use of such materials may involved confounding variables (e.g.,  other genetic variants) that may be difficult to account for in validation. CLO, CO and BAI terms are preferred when available.",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "description",
+          "description": "Free-text description/summary of the assay",
+          "slot_uri": "dc:description",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "document",
+          "description": "The primary document or manuscript in which the assay and its results are described. Supplementary descriptions can be recorded in \"additional publication\"",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "additional_document",
+          "description": "External document referenced in this document as providing details about the assay",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "read_out_description",
+          "description": "Free-text description of the type of readout of the assay",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "range",
+          "description": "Range of all possible output values of the assay. If qualitative this will comprise a list of terms indicating the observable results. If quantitative, this will indicate the units used.",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "normal_range",
+          "description": "The subset of possible output values which the authors of an assay classify as indicative of normal function.",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "abnormal_range",
+          "description": "The subset of possible output values which the authors of an assay classify as indicative of abnormal function.",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "indeterminate_range",
+          "description": "The subset of possible output values which the authors of an assay classify as indeterminante with respect to function.",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "validation_control_pathogenic",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "validation_control_benign",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "replication",
+          "description": "Description of the process for replication of an assay as provided by the document, or \"not reported\" if not specified.",
+          "range": "string",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "statistical_analysis_description",
+          "description": "Description of the statistical analysis performed for validation and determination of thresholds of the assay, or \"not reported\" if the document does not specify.",
+          "range": "string",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "significance_threshold",
+          "description": "The threshold for significance of measurements under this assay, as defined by the authors of the document (if provided).",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "comment",
+          "description": "Any additional information that a curator would like to provide about the FunctionalAssay that is not adequately captured by other fields",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "range_type",
+          "description": "The type of values that can be expected from results of this assay (quantitative or qualitative). This could be inferred from the assay's range, but is encoded here to simplify searches.",
+          "range": "RangeType",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "units",
+          "description": "For quantitative assays, the default unit to be applied to individual results if not overridden.",
+          "range": "unit",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIOCG_FunctionalAssay",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FunctionalAssayResult",
+      "definition_uri": "http://purl.obolibrary.org/obo/SEPIOCG_FunctionalAssayResult",
+      "description": "The result of assessing a genetic variant's effect under a single instance of a functional assay.",
+      "from_schema": "https://clinicalgenome.org/linkml/variant-functional-assay",
+      "slots": [
+        "functionalAssayResult__result",
+        "functionalAssayResult__result_assertion",
+        "functionalAssayResult__assay",
+        "functionalAssayResult__variant",
+        "functionalAssayResult__units",
+        "functionalAssayResult__validation_control",
+        "functionalAssayResult__replicate_count",
+        "functionalAssayResult__standard_deviation",
+        "functionalAssayResult__standard_error_of_mean",
+        "functionalAssayResult__range",
+        "functionalAssayResult__intraquartile_range",
+        "functionalAssayResult__p_value",
+        "functionalAssayResult__is_approximation_by_curator"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "result",
+          "description": "The measured value of this variant's effect on function. The value must be consistent with the `range` of the referenced `assay`.",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "result_assertion",
+          "description": "An assertion as to the categorized impact of the variant's effect, as described by the authors reporting the `assay` (if provided).",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "assay",
+          "range": "FunctionalAssay",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "variant",
+          "range": "Variant",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "units",
+          "description": "For qualtitatve assays, the units of the `result`. This may be omitted if the referenced `assay` provides a default value for the units of its measurements. Values must be from the Units of Measurement Ontology (UO)",
+          "range": "unit",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "validation_control",
+          "description": "Optional field used to indicate if this result is for a variant that was used as a validation control for the `assay` either as a `benign` or `pathogenic` variant.",
+          "range": "ValidationControlType",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "replicate_count",
+          "description": "The number of times the `variant` was evaluated using the `assay` to produce the reported `result`.",
+          "range": "integer",
+          "minimum_value": 0,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "standard_deviation",
+          "range": "decimal",
+          "minimum_value": 0,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "standard_error_of_mean",
+          "range": "decimal",
+          "minimum_value": 0,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "range",
+          "pattern": "^[<>]?[-\\d]+(.\\d+)? - [<>]?[-\\d]+(.\\d+)?",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "intraquartile_range",
+          "pattern": "^[<>]?[-\\d]+(.\\d+)? - [<>]?[-\\d]+(.\\d+)?",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "p_value",
+          "range": "decimal",
+          "minimum_value": 0,
+          "maximum_value": 1,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "is_approximation_by_curator",
+          "description": "A flag to indicate that the curator had to use some method of approximation of the `result` (e.g., by reading the value from a graph when numerical values were not provided by the authors reporting the `assay`).",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://purl.obolibrary.org/obo/SEPIOCG_FunctionalAssayResult",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "variant_functional_assay.yaml",
+  "source_file_date": "2022-04-19T21:55:16",
+  "source_file_size": 10057,
+  "generation_date": "2022-04-19T22:03:47",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "project/jsonld/variant_functional_assay.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "http://purl.obolibrary.org/obo/SEPIOCG_"
+    }
+  ]
+}

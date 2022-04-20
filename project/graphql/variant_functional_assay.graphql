@@ -1,0 +1,83 @@
+type Disease
+  {
+  }
+
+type Document
+  {
+    pmid: String!
+    pmcId: String
+    comment: [String]
+  }
+
+type FunctionalAssay
+  {
+    generalClass: [String]
+    materialUsed: [String]
+    patientDerivedMaterialUsed: [String]
+    description: String
+    document: String
+    additionalDocument: [String]
+    readOutDescription: String
+    range: String
+    normalRange: String
+    abnormalRange: String
+    indeterminateRange: String
+    validationControlPathogenic: String
+    validationControlBenign: String
+    replication: String!
+    statisticalAnalysisDescription: String!
+    significanceThreshold: String
+    comment: [String]
+    rangeType: RangeType
+    units: Unit
+  }
+
+type FunctionalAssayResult
+  {
+    result: String!
+    resultAssertion: String
+    assay: FunctionalAssay
+    variant: Variant
+    units: Unit
+    validationControl: ValidationControlType
+    replicateCount: Integer
+    standardDeviation: Decimal
+    standardErrorOfMean: Decimal
+    range: String
+    intraquartileRange: String
+    pValue: Decimal
+    isApproximationByCurator: Boolean
+  }
+
+type Gene
+  {
+    symbol: String
+    synonym: String
+    xref: String
+  }
+
+type GeneticCondition
+  {
+    associatedDisease: [Disease]
+    hasPhenotype: [PhenotypicFeature]
+    hasGene: Gene
+    inheritancePattern: String
+    label: String
+    description: String
+    comment: [String]
+  }
+
+type PhenotypicFeature
+  {
+  }
+
+type Variant
+  {
+    hasGene: Gene
+    canonicalAlleleId: String!
+    hgvsC: String
+    hgvsP: String
+    clinvarId: String
+    legacyName: [String]
+  }
+

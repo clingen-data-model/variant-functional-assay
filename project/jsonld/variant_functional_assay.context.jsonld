@@ -1,0 +1,134 @@
+{
+   "_comments": "Auto generated from variant_functional_assay.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-04-19T22:03:47\n    Schema: functional-assay\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://clinicalgenome.org/linkml/variant-functional-assay\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "CAID": {
+         "@id": "http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=",
+         "@prefix": true
+      },
+      "DOID": {
+         "@id": "http://purl.obolibrary.org/obo/DOID_",
+         "@prefix": true
+      },
+      "HGNC": {
+         "@id": "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=",
+         "@prefix": true
+      },
+      "HP": {
+         "@id": "http://purl.obolibrary.org/obo/HP_",
+         "@prefix": true
+      },
+      "IAO": {
+         "@id": "http://purl.obolibrary.org/obo/IAO_",
+         "@prefix": true
+      },
+      "MONDO": {
+         "@id": "http://purl.obolibrary.org/obo/MONDO_",
+         "@prefix": true
+      },
+      "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
+      "OMIM": {
+         "@id": "http://purl.obolibrary.org/obo/OMIM_",
+         "@prefix": true
+      },
+      "Orphanet": {
+         "@id": "http://www.orpha.net/ORDO/Orphanet_",
+         "@prefix": true
+      },
+      "RO": {
+         "@id": "http://purl.obolibrary.org/obo/RO_",
+         "@prefix": true
+      },
+      "SEPIO": {
+         "@id": "http://purl.obolibrary.org/obo/SEPIO_",
+         "@prefix": true
+      },
+      "SO": {
+         "@id": "http://purl.obolibrary.org/obo/SO_",
+         "@prefix": true
+      },
+      "biolink": {
+         "@id": "https://w3id.org/biolink/biolink-model",
+         "@prefix": true
+      },
+      "dc": "http://purl.org/dc/terms/",
+      "linkml": "https://w3id.org/linkml/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "sdo": "https://schema.org/",
+      "sepio-cg": {
+         "@id": "http://purl.obolibrary.org/obo/SEPIOCG_",
+         "@prefix": true
+      },
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "@vocab": "http://purl.obolibrary.org/obo/SEPIOCG_",
+      "associated_disease": {
+         "@type": "@id"
+      },
+      "pmid": "@id",
+      "description": {
+         "@id": "dc:description"
+      },
+      "range_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "units": {
+         "@type": "UO:0000000"
+      },
+      "assay": {
+         "@type": "@id"
+      },
+      "is_approximation_by_curator": {
+         "@type": "xsd:boolean"
+      },
+      "p_value": {
+         "@type": "xsd:decimal"
+      },
+      "replicate_count": {
+         "@type": "xsd:integer"
+      },
+      "standard_deviation": {
+         "@type": "xsd:decimal"
+      },
+      "standard_error_of_mean": {
+         "@type": "xsd:decimal"
+      },
+      "validation_control": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "variant": {
+         "@type": "@id"
+      },
+      "inheritance_pattern": {
+         "@id": "RO:0000091"
+      },
+      "label": {
+         "@id": "rdfs:label"
+      },
+      "has_gene": {
+         "@type": "@id"
+      },
+      "has_phenotype": {
+         "@type": "@id",
+         "@id": "RO:0002200"
+      },
+      "canonical_allele_id": "@id",
+      "Document": {
+         "@id": "IAO:0000310"
+      },
+      "Gene": {
+         "@id": "SO:0000704"
+      },
+      "GeneticCondition": {
+         "@id": "SEPIO:0000219"
+      }
+   }
+}

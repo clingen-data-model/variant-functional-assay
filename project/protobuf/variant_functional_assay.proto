@@ -1,0 +1,75 @@
+// A collection of information content entities intended to be understood together as a whole
+message Document
+ {
+  pmid String = 1
+  optional pmcId String = 2
+  repeated comment String = 3
+ }
+// Experimental evaluation of the functional effect of one or more genetic variants.
+message FunctionalAssay
+ {
+  repeated generalClass String = 1
+  repeated materialUsed String = 2
+  repeated patientDerivedMaterialUsed String = 3
+  optional description String = 4
+  optional document String = 5
+  repeated additionalDocument String = 6
+  optional readOutDescription String = 7
+  optional range String = 8
+  optional normalRange String = 9
+  optional abnormalRange String = 10
+  optional indeterminateRange String = 11
+  optional validationControlPathogenic String = 12
+  optional validationControlBenign String = 13
+  replication String = 14
+  statisticalAnalysisDescription String = 15
+  optional significanceThreshold String = 16
+  repeated comment String = 17
+  optional rangeType RangeType = 18
+  optional units Unit = 19
+ }
+// The result of assessing a genetic variant's effect under a single instance of a functional assay.
+message FunctionalAssayResult
+ {
+  result String = 1
+  optional resultAssertion String = 2
+  optional assay FunctionalAssay = 3
+  optional variant Variant = 4
+  optional units Unit = 5
+  optional validationControl ValidationControlType = 6
+  optional replicateCount Integer = 7
+  optional standardDeviation Decimal = 8
+  optional standardErrorOfMean Decimal = 9
+  optional range String = 10
+  optional intraquartileRange String = 11
+  optional pValue Decimal = 12
+  optional isApproximationByCurator Boolean = 13
+ }
+// A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.
+message Gene
+ {
+  optional symbol String = 1
+  optional synonym String = 2
+  optional xref String = 3
+ }
+// A disease, or a set of one or more co-occurring phenotypes, typically controlled by a single locus with a defined inheritance pattern.
+message GeneticCondition
+ {
+  repeated associatedDisease Disease = 1
+  repeated hasPhenotype PhenotypicFeature = 2
+  optional hasGene Gene = 3
+  optional inheritancePattern String = 4
+  optional label String = 5
+  optional description String = 6
+  repeated comment String = 7
+ }
+// A genetic variant, preferably identified by a canonical allele id
+message Variant
+ {
+  optional hasGene Gene = 1
+  canonicalAlleleId String = 2
+  optional hgvsC String = 3
+  optional hgvsP String = 4
+  optional clinvarId String = 5
+  repeated legacyName String = 6
+ }
