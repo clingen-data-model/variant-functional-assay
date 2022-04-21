@@ -1,8 +1,8 @@
 # Auto generated from variant_functional_assay.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-04-19T22:03:52
+# Generation date: 2022-04-20T21:17:36
 # Schema: functional-assay
 #
-# id: https://clinicalgenome.org/linkml/variant-functional-assay
+# id: https://dataexchange.clinicalgenome.org/variant-functional-assay
 # description:
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
