@@ -2,377 +2,377 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Boolean/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Date/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Datetime/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Decimal/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Disease/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Document/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Double/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Float/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/FunctionalAssay/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/FunctionalAssayResult/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Gene/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/GeneticCondition/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Integer/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Ncname/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Nodeidentifier/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Objectidentifier/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Phenotype/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/PhenotypicFeature/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/RangeType/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/String/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Time/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Unit/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Uri/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Uriorcurie/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/ValidationControlType/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/Variant/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/abnormal_range/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/about/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/additional_document/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/assay/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/associated_disease/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/canonical_allele_id/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/clinvar_id/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/comment/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/description/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/document/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/functional-assay/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/general_class/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/has_gene/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/has_phenotype/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/hgvs_c/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/hgvs_p/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/indeterminate_range/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/inheritance_pattern/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/intraquartile_range/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/is_approximation_by_curator/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/label/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/legacy_name/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/material_used/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/normal_range/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/p_value/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/patient_derived_material_used/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/pmc_id/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/pmid/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/range/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/range_type/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/read_out_description/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/replicate_count/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/replication/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/result/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/result_assertion/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/significance_threshold/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/standard_deviation/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/standard_error_of_mean/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/statistical_analysis_description/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/symbol/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/synonym/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/types/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/units/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/validation_control/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/validation_control_benign/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/validation_control_pathogenic/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/variant/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://clingen-data-model.github.io/variant-functional-assay/xref/</loc>
-         <lastmod>2022-04-20</lastmod>
+         <lastmod>2022-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
